@@ -103,7 +103,7 @@ const submit = async () => {
     
         f7.dialog.alert(message.value.message)
 
-       f7.params.router.navigation('/home/')
+       location.href ="/home"
     }
 
     if (authStore.state.error !== null) {
@@ -111,8 +111,6 @@ const submit = async () => {
             ...state.error
         }
     }
-
-
 }
 
 
