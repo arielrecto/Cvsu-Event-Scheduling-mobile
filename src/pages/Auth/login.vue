@@ -89,6 +89,9 @@ const submit = async () => {
 
     error.value = {}
 
+    state.message = null;
+
+
     await authStore.dispatch('login');
 
 
@@ -100,7 +103,7 @@ const submit = async () => {
     
         f7.dialog.alert(message.value.message)
 
-        location.href = '/home'
+       f7.params.router.navigation('/home/')
     }
 
     if (authStore.state.error !== null) {

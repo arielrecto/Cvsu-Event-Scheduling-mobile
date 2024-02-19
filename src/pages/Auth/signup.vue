@@ -227,7 +227,7 @@
                         <!-- <template v-if="'credentials' in error">
                         <p class="error">{{ error.credentials }}</p>
                     </template> -->
-                        <div class="item-title item-label">image (PNG, JPG, JPEG)</div>
+                        <div class="item-title item-label">image (JPG, JPEG)</div>
                         <div class="item-input-wrap">
                             <input type="file" placeholder="address" @change="imageUploadHandler($event)" />
                             <template v-if="'image' in error">
@@ -243,7 +243,7 @@
                         <!-- <template v-if="'credentials' in error">
                         <p class="error">{{ error.credentials }}</p>
                     </template> -->
-                        <div class="item-title item-label">valid Documents(PNG, JPG, JPEG)</div>
+                        <div class="item-title item-label">valid Documents(JPG, JPEG)</div>
                         <div class="item-input-wrap">
                             <input type="file" placeholder="address" @change="validDocumentsHandler($event)" />
                             <template v-if="'valid_documents' in error">

@@ -22,11 +22,8 @@
 </template>
 
 
-<script>
+<script setup>
 import Home from './../components/layouts/base.vue';
-export default {
-    components: {
-        Home
-    }
-}
+import { f7 } from 'framework7-vue';
+
 </script>
