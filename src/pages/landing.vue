@@ -31,35 +31,41 @@
 
                         <template v-for="event in state.events" :key="event.id">
                             <f7-card class="demo-card-header-pic">
-                            <f7-card-header valign="bottom"
-                                :style="`background-image: url(${event.image}); height : 10rem; background-position: top;
+                                <f7-card-header valign="bottom"
+                                    :style="`background-image: url(${event.image}); height : 10rem; background-position: top;
                                 background-repeat : no-repeat; background-size: cover; font-weight:bold; text-transform:capitalize`">
-                                {{ event.name }}</f7-card-header>
-                            <f7-card-content>
-                                <p class="date">Posted on {{ formatDate(event.created_at) }}</p>
-                                <p>
-                                    <span v-html="event.description"></span>
-                                </p>
-                                <p style="font-size:x-small; font-weight: bold;">Event Duration</p>
-                                <p style="display: flex; align-items: center; gap: 2px; font-size: xx-small;">
-                                    <span>
-                                        {{ formatDate(event.start_date) }} - 
-                                    </span>
-                                    <span>
-                                        {{ formatDate(event.end_date) }}
-                                    </span>
-                                </p>
-                            </f7-card-content>
-                            <f7-card-footer>
-                                <f7-link>Like</f7-link>
-                                <f7-link>Read more</f7-link>
-                            </f7-card-footer>
-                        </f7-card>
+                                    {{ event.name }}</f7-card-header>
+                                <f7-card-content>
+                                    <p class="date">Posted on {{ formatDate(event.created_at) }}</p>
+                                    <p>
+                                        <span v-html="event.description"></span>
+                                    </p>
+                                    <p style="font-size:x-small; font-weight: bold;">Event Duration</p>
+                                    <p style="display: flex; align-items: center; gap: 2px; font-size: xx-small;">
+                                        <span>
+                                            {{ formatDate(event.start_date) }} -
+                                        </span>
+                                        <span>
+                                            {{ formatDate(event.end_date) }}
+                                        </span>
+                                    </p>
+                                    <p style="font-size:x-small; font-weight: bold;">Event Time</p>
+                                    <p style="display: flex; align-items: center; gap: 2px; font-size: xx-small;">
+                                        <span>
+                                            {{ formatTime(event.start_time) }} -
+                                        </span>
+                                        <span>
+                                            {{ formatTime(event.end_time) }}
+                                        </span>
+                                    </p>
+                                </f7-card-content>
+                                <f7-card-footer>
+                                    <f7-link>Like</f7-link>
+                                    <f7-link :href="`/event/${event.id}`">Read more</f7-link>
+                                </f7-card-footer>
+                            </f7-card>
 
                         </template>
-
-                      
-
                     </f7-list>
                 </f7-block>
             </template>
@@ -70,10 +76,11 @@
 
 <script setup>
 import Home from './../components/layouts/base.vue';
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, defineProps } from 'vue';
 import { f7 } from 'framework7-vue';
 import { LandingStore } from '../js/state/LandingStore';
 import formatDate from '@/helpers/dateFormat.js'
+import formatTime from '@/helpers/timeFormat.js'
 
 
 const { state } = LandingStore
@@ -110,7 +117,7 @@ onMounted(() => {
     padding: 5px;
 }
 
-h-50{
+h-50 {
     height: 50%;
 }
 

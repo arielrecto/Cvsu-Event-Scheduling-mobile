@@ -5,7 +5,9 @@ export const LandingStore = createStore({
     state : {
         announcement : null,
         events : [],
-        isLoading : false
+        isLoading : false,
+        eventID : null,
+        event : null,
     },
     getters : {},
     actions : {
@@ -22,6 +24,20 @@ export const LandingStore = createStore({
 
 
             
+            } catch (error) {
+                console.log(error);
+            }
+        },
+
+        async eventData({state}){
+            try {
+
+                console.log(state.eventID);
+
+                const response = await Api().get(`/mobile/event/${state.eventID}`);
+
+                console.log(response.data);
+                
             } catch (error) {
                 console.log(error);
             }

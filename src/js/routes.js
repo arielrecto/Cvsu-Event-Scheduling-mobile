@@ -11,6 +11,7 @@ import RequestAndLoad from '../pages/request-and-load.vue';
 import NotFoundPage from '../pages/404.vue';
 import LandingPage from '../pages/landing.vue';
 import RegisterPage from '@/pages/Auth/signup.vue';
+import EventShowPage from '@/pages/event-show.vue';
 
 
 
@@ -53,6 +54,10 @@ var routes = [
     path: '/login/',
     component:  LoginPage,
     beforeEnter: preventLoginAccess
+  },
+  {
+    path : '/event/:id',
+    component : EventShowPage
   },
   {
     path: '/register/',
