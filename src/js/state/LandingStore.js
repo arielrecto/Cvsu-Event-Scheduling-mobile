@@ -34,7 +34,7 @@ export const LandingStore = createStore({
 
                 console.log(state.eventID);
 
-                const response = await Api().get(`/mobile/event/${state.eventID}`);
+                const response = await Api().get(`/mobile/public/event/${state.eventID}`);
 
                 state.event = {
                     ...response.data.event

@@ -24,7 +24,7 @@
           </f7-link>
         </f7-block>
         <f7-block>
-          <f7-link href="#" table-link="#view-login">
+          <f7-link href="/dashboard/" table-link="#view-login">
             Dashboard
           </f7-link>
         </f7-block>

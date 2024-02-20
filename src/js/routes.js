@@ -12,16 +12,17 @@ import NotFoundPage from '../pages/404.vue';
 import LandingPage from '../pages/landing.vue';
 import RegisterPage from '@/pages/Auth/signup.vue';
 import EventShowPage from '@/pages/event-show.vue';
+import Dashboard from '@/pages/dashboard/index.vue';
+import DashboardEventShowPage from '@/pages/dashboard/events/show.vue';
 
 
-
-const requireAuth = (to, from, next) => {
+const requireAuth = ({ resolve, reject }) => {
   if (localStorage.token !== null) {
     // Token is not null, allow access to the route
-    next();
+    resolve()
   } else {
     // Token is null, redirect to the login page or any other route
-    next('/login/');
+    reject()
   }
 };
 
@@ -54,6 +55,16 @@ var routes = [
     path: '/login/',
     component:  LoginPage,
     beforeEnter: preventLoginAccess
+  },
+  {
+    path : '/dashboard/',
+    component : Dashboard,
+    beforeEnter : requireAuth
+  },
+  {
+    path : '/dashboard/events/:id',
+    component : DashboardEventShowPage,
+    beforeEnter : requireAuth
   },
   {
     path : '/event/:id',
