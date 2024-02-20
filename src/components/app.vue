@@ -19,8 +19,13 @@
       </template>
       <template v-else>
         <f7-block>
-          <f7-link href="/login/" table-link="#view-login">
-            Announcement
+          <f7-link href="/" table-link="#view-login">
+            Home
+          </f7-link>
+        </f7-block>
+        <f7-block>
+          <f7-link href="#" table-link="#view-login">
+            Dashboard
           </f7-link>
         </f7-block>
         <f7-block>
