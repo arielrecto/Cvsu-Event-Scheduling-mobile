@@ -37,6 +37,7 @@ export const authStore = createStore({
         const response = await Api().post("/mobile/login", data);
 
         localStorage.setItem('token', response.data.token);
+        localStorage.setItem('user_id', response.data.user_id);
 
 
         state.status = response.status

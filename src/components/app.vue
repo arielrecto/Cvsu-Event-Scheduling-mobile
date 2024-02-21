@@ -29,6 +29,11 @@
           </f7-link>
         </f7-block>
         <f7-block>
+          <f7-link href="/dashboard/profile" table-link="#view-login">
+            Profile
+          </f7-link>
+        </f7-block>
+        <f7-block>
           <f7-link @click="logout" table-link="#view-login">
             logout
           </f7-link>

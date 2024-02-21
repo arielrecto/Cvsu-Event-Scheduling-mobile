@@ -14,6 +14,8 @@ import RegisterPage from '@/pages/Auth/signup.vue';
 import EventShowPage from '@/pages/event-show.vue';
 import Dashboard from '@/pages/dashboard/index.vue';
 import DashboardEventShowPage from '@/pages/dashboard/events/show.vue';
+import DashboardProfileShowPage from '@/pages/dashboard/profile/show.vue';
+import DashboardProfileEditPage from '@/pages/dashboard/profile/edit.vue';
 
 
 const requireAuth = ({ resolve, reject }) => {
@@ -64,6 +66,16 @@ var routes = [
   {
     path : '/dashboard/events/:id',
     component : DashboardEventShowPage,
+    beforeEnter : requireAuth
+  },
+  {
+    path : '/dashboard/profile',
+    component : DashboardProfileShowPage,
+    beforeEnter : requireAuth
+  },
+  {
+    path : '/dashboard/profile/edit',
+    component : DashboardProfileEditPage,
     beforeEnter : requireAuth
   },
   {
